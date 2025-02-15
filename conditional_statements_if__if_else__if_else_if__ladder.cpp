@@ -39,7 +39,28 @@ int main()
 
 
     // Nested conditional statements 
-    
+    int salary;
+
+    cout << "Enter age again: ";
+    cin >> age;
+    cout << "Enter your salary: ";
+    cin >> salary;
+
+    if(age >= 18)
+    {
+        if(salary > 4000000)
+        {
+            printf("Good salary for a fresher\n");
+        }
+        else
+        {
+            cout << "Not a good salary for a fresher\n";
+        }
+    }
+    else
+    {
+        cout << "You are underage\n";
+    }
 
     return 0;
 }
