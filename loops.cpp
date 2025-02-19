@@ -1,5 +1,18 @@
 // Program to learn the usage of loops in C++
 
+/*
+
+* Loops:
+    Loops are looping control structures used to repeatedly execute a particular block of code, until a certain condition is met
+
+* Types of loops in C++:
+    1. while loop
+    2. do...while loop
+    3. for loop
+    4. for-each loop
+
+*/
+
 #include<iostream>
 using namespace std;
 
@@ -30,6 +43,10 @@ int main()
     {
         cout << "for loop i: " << i << endl;
     }
+
+    
+    // 4. for-each loop
+    
 
     return 0;
 }

@@ -1,16 +1,22 @@
-#include <iostream>
-void printBinary(int num)
-{
-    if (num > 1)
-        printBinary(num / 2);
-    std::cout << (num % 2);
-}
+#include<iostream>
+using namespace std;
 
 int main()
 {
-    int num = 10; // Example number
-    std::cout << "Binary: ";
-    printBinary(num);
-    std::cout << std::endl;
+
+    typedef struct Student
+    {
+        char c;
+        int age;
+    }e;
+
+    Student s1, s2;
+    e s3, s4;
+
+    cout << "sizeof(s1): " << sizeof(s1) << "\n";
+    cout << "sizeof(s3): " << sizeof(s3) << "\n";
+
+    cout << "sizeof(struct Student): " << sizeof(struct Student) << endl;
+
     return 0;
 }
