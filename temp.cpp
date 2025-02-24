@@ -1,22 +1,15 @@
-#include<iostream>
+#include <bitset>
+#include <iostream>
+
 using namespace std;
 
 int main()
 {
+    bitset<4> x { 0b1100 };
 
-    typedef struct Student
-    {
-        char c;
-        int age;
-    }e;
-
-    Student s1, s2;
-    e s3, s4;
-
-    cout << "sizeof(s1): " << sizeof(s1) << "\n";
-    cout << "sizeof(s3): " << sizeof(s3) << "\n";
-
-    cout << "sizeof(struct Student): " << sizeof(struct Student) << endl;
+    cout << x << '\n';
+    cout << (x >> 1) << '\n'; // shift right by 1, yielding 0110
+    cout << (x << 1) << '\n'; // shift left by 1, yielding 1000
 
     return 0;
 }
