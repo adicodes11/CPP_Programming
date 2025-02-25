@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <string> // Strings in C++, as well as related string functions are defined under the <string> library
+#include<sstream> // For strings to integer
 
 using namespace std;
 
@@ -108,6 +109,85 @@ int main()
     cout << "After clearing: " << sd << '\n';
     cout << (int)sd[0] << '\n';     // clear() function just puts a \0 character at the first index of the string to terminate or say clear the string
     cout << sd[1] << "\n\n"; 
+
+
+
+    // 
+    // 7. Converting to string or vice versa
+    // Integer to string
+    string test4 = to_string(-10);
+    cout << "to_string(-10): " << test4 << "\n";
+    // Double to string
+    test4 = to_string(-10.55);
+    cout << "to_string(-10): " << test4 << "\n\n";
+
+    // String to double or integer
+    // To double
+    double number = stod(test4);
+    cout << "Number: " << number << "\n";
+
+    // To integer
+    string intString = "123";
+    int num = stoi(intString);
+    cout << "num: " << num << "\n";
+
+    // For versions of C++ older than C++11:
+    // Other way to convert to integer - using stringstream object from the <sstream> header
+    stringstream convert;
+    int n2;
+    convert << intString;   // Insert string into stringstream
+    convert >> n2;
+    cout << "n2: " << n2 << "\n\n";
+
+    // To float
+    string floatString = "90.55";
+    float f = stof(floatString);
+    cout << "f: " << f << "\n\n";
+
+    
+    // 
+    // Convert number to string
+    // The to_string() function works just like the sprintf() function from C
+    // From integer
+    int x = 123;
+    string sx = to_string(x);
+    cout << "sx: " << sx << '\n';
+
+    // From double
+    double dd{456.83};
+    string sdd = to_string(dd);
+    cout << "sd: " << sdd << '\n';
+
+    // From float 
+    float ff{45.34};
+    string sff = to_string(ff);
+    cout << "sff: " << sff << '\n';
+
+    // For older versions of C++, older than C++11 - we can use the stringstream object to make conversions
+    stringstream convert2;
+    double newDouble{66.22};
+    string newString{};
+    convert2 << newDouble;
+    convert2 >> newString;
+    cout << "newString: " << newString << "\n\n";
+
+
+    // Pulling out a substring out of a string
+    string test5 = "A test string to work with";
+    string sub = test5.substr(2, 4);        // Starting at index 2, pulls out 4 characters from the string(i.e., "test")
+    cout << "Substring: " << sub << "\n\n";
+
+
+    // String input
+    string name{};
+    cout << "Enter your name: ";
+    cin >> name;
+    cout << "Name: " << name << '\n';
+
+    // Input using getline()
+    cout << "Enter your name again: ";
+    getline(cin, name);
+    cout << "Name: " << name << "\n\n";
 
     return 0;
 }
