@@ -1,1 +1,0 @@
-static int g_x{};
