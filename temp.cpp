@@ -1,14 +1,19 @@
 #include <iostream>
 
+void print(int x)
+{
+     std::cout << x << '\n';
+}
+
+void print(double d)
+{
+     std::cout << d << '\n';
+}
+
 int main()
 {
-    int a{5};
-    int &b{a};
+     print('a'); // char does not match int or double, so what happens?
+    //  print(5L); // long does not match int or double, so what happens?
 
-    std::cout << "a: " << a << '\n';
-    std::cout << "b: " << b << '\n';
-
-    int c = 20;
-
-    return 0;
+     return 0;
 }
