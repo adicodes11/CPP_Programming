@@ -38,6 +38,7 @@ std::optional<Pet> getPetFromString(std::string_view petStr)
 
     // If none of the above matches then return std::optional
     return std::nullopt;
+    return {};  // same as above
 }
 
 int main()

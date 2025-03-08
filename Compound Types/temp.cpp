@@ -1,23 +1,27 @@
 #include <iostream>
-#include <optional> // for std::optional (C++17)
 
-// Our function now optionally returns an int value
-std::optional<int> doIntDivision(int x, int y)
+template <typename T>
+struct Pair
 {
-    if (y == 0)
-        return {}; // or return std::nullopt
-    return x / y;
+    T first{};
+    T second{};
+};
+
+template <typename T>
+T max(Pair<T> p)
+{
+    return (p.first < p.second ? p.second : p.first);
 }
 
 int main()
 {
-    std::optional<int> result1 { doIntDivision(20, 5) };
-    if (result1) // if the function returned a value
-        std::cout << "Result 1: " << *result1 << '\n'; // get the value
-    else
-        std::cout << "Result 1: failed\n";
-
-    std::cout << "item_id(): " << typeid(result1).name();
+    Pair p1{ 5, 6 };
+    std::cout << max(p1) << " is larger\n";
+    std::cout << max(p1) << " is larger\n";
+    
+    Pair p2{ 1.2, 3.4 };
+    std::cout << max(p2) << " is larger\n";
+    std::cout << max(p2) << " is larger\n";
 
     return 0;
 }
