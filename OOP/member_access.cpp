@@ -10,7 +10,7 @@ public:
         std::cout << "a: " << a << '\n';
     }
 
-private:
+protected:
     int a{20};
 
 };
